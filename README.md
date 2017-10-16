@@ -7,6 +7,8 @@ The design may seem over complex but there is a good reason. The Amiga outputs 5
 
 U1 and U2 are configurable little logice devices. You can either output HSync and Vsync for monitors/adaptors or CSYNC and 2.5V for RGB SCART. A jumper selects the desired mode of operation, leave off for Minimig SCART and fit to output HSync/Vsync. The AMiga DB23 connector has been disposed of, a 15 way HD (VGA) connector is used as you can easily purchase RGB + Hsync + Vsync cables or a Minimig SCART cable (https://github.com/mist-devel/mist-board/wiki/ScartCable)
 
+The RGB outputs on the CD32 are missing the 75R series resistors, so they have been added here. They are required so that when connectoed to a TV/Monitor/adpator with 75R termination a 0.7V peak signal is seen. Without these resistors the receiver will see a 2x signal (1.4V) which may exceed the dynamic range of some video ADCs/decoders. This causes video colour issues.
+
 IC5 is the 5V to 3.3V LDO converter. C5 must be either a Tantalum, Tantalum polymer or electrolytic capacitor. DO NOT FIT A CERAMIC, it will be unstable. Read this to understand why http://www.ti.com/lit/an/snva167a/snva167a.pdf and enjoy pole/zero analysis :)
 
 # RS232 interface
